@@ -1,0 +1,90 @@
+{
+  "target_environment_id": "env_6",
+
+  "environments": [
+    {
+      "env_id": "env_1",
+      "desc": [
+        "SVRVVRRV",
+        "RVVVRRVV",
+        "VRVRVVRV",
+        "RVVVRVRV",
+        "VRRRRVVV",
+        "RRVWRVRV",
+        "RRRVRRRV",
+        "RRVVRRVG"
+      ],
+      "reward_schedule": [0.0, -0.1, -1.0, 1.0, 10.0]
+    },
+    {
+      "env_id": "env_2",
+      "desc": [
+        "SVRVVRRV",
+        "RVVVRRVV",
+        "VRVRVVRV",
+        "RVRVBVRV",
+        "VRRRRVVV",
+        "RRVWRVRV",
+        "RRRVRRRV",
+        "RRVVRRVG"
+      ],
+      "reward_schedule": [0.0, -0.1, -1.0, 1.0, 10.0]
+    },
+    {
+      "env_id": "env_3",
+      "desc": [
+        "SVRVBRRR",
+        "RVVRVRVR",
+        "RVVBVVRV",
+        "RVRVRRRV",
+        "RRRRRVRV",
+        "RVVWRRRR",
+        "VRRRRRVV",
+        "RRVVRRBG"
+      ],
+      "reward_schedule": [0.0, -0.1, -1.0, 1.0, 10.0]
+    },
+    {
+      "env_id": "env_4",
+      "desc": [
+        "SVRVRRRR",
+        "RBVBVRVR",
+        "VVVBVVRR",
+        "RVVBRRRB",
+        "RRRRRVRB",
+        "RVRWRRRR",
+        "VRRRRRVV",
+        "RRVVRRRG"
+      ],
+      "reward_schedule": [0.0, -0.1, -1.0, 1.0, 10.0]
+    },
+    {
+      "env_id": "env_5",
+      "desc": [
+        "SVRVRRRR",
+        "RBVBVRVR",
+        "VVVBRVRR",
+        "RVVBRRRB",
+        "RRRBRVRV",
+        "RVRWRRRR",
+        "VRRRRRVV",
+        "RRVVRRRG"
+      ],
+      "reward_schedule": [0.0, -0.1, -1.0, 1.0, 10.0]
+    },
+    {
+      "env_id": "env_6",
+      "desc": [
+        "SVVVRVRV",
+        "BRRRRBVB",
+        "BVBRRRBV",
+        "RVRBVVVB",
+        "VRRBBBRB",
+        "BBVWRBVR",
+        "VVRBBBVB",
+        "VBRVRVVG"
+      ],
+      "reward_schedule": [0.0, -0.1, -1.0, 1.0, 10.0]
+    }
+  ]
+}

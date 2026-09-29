@@ -1,0 +1,94 @@
+{
+  "environments": [
+    {
+      "env_id": "env_1",
+      "desc": [
+        "SVVVVVVV",
+        "VRVVRVVR",
+        "RRVVVRRV",
+        "RVRRVVRV",
+        "RRVRRVVV",
+        "VVVWVRRR",
+        "VRRVVVRV",
+        "VRRRVVVG"
+      ],
+      "reward_schedule": [0.0, -0.1, -1.0, 1.0, 10.0],
+      "complexity": 0.0
+    },
+    {
+      "env_id": "env_2",
+      "desc": [
+        "SVVVVVVV",
+        "VRVVRVVR",
+        "RRVVVRBV",
+        "RVRRVVRV",
+        "RRRRRVVV",
+        "VVVWVRRV",
+        "VRRVVVRV",
+        "VRVRVVBG"
+      ],
+      "reward_schedule": [0.0, -0.1, -1.0, 1.0, 10.0],
+      "complexity": 0.3223515223897724
+    },
+    {
+      "env_id": "env_3",
+      "desc": [
+        "SRVVVVVV",
+        "VRVVRVVR",
+        "RRVVRRRV",
+        "BRBRVRRV",
+        "RBRRRVVV",
+        "BVVWVRRR",
+        "VVRVVBRV",
+        "RRVVVVVG"
+      ],
+      "reward_schedule": [0.0, -0.1, -1.0, 1.0, 10.0],
+      "complexity": 0.41537771443160265
+    },
+    {
+      "env_id": "env_4",
+      "desc": [
+        "SRVVVVVV",
+        "VRVVRVVR",
+        "RRBVRRRV",
+        "BRBRVRRV",
+        "RBRRRVVV",
+        "BVVWVRRR",
+        "VVRVVBRV",
+        "RRVVVVVG"
+      ],
+      "reward_schedule": [0.0, -0.1, -1.0, 1.0, 10.0],
+      "complexity": 0.5525909867081071
+    },
+    {
+      "env_id": "env_5",
+      "desc": [
+        "SRVVRVVV",
+        "VRVVRVVR",
+        "RRBVRRRV",
+        "BVBRVRRV",
+        "RBBRRVVV",
+        "VVVWRRBR",
+        "VVRVVBRV",
+        "RRVVVVVG"
+      ],
+      "reward_schedule": [0.0, -0.1, -1.0, 1.0, 10.0],
+      "complexity": 0.7561956533599956
+    },
+    {
+      "env_id": "env_6",
+      "desc": [
+        "SVVVRVRV",
+        "BRRRRBVB",
+        "BVBRRRBV",
+        "RVRBVVVB",
+        "VRRBBBRB",
+        "BBVWRBVR",
+        "VVRBBBVB",
+        "VBRVRVVG"
+      ],
+      "reward_schedule": [0.0, -0.1, -1.0, 1.0, 10.0],
+      "complexity": 0.9317211258001081
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+condition,n_runs,mean_reward_mean,mean_reward_std,success_rate_mean,success_rate_std
+adaptive,10,10.200000000000003,0.0,1.0,0.0
+curriculum,10,9.180000000000003,3.060000000000001,0.9,0.30000000000000004
+random_ordered,10,4.83,4.840051652616943,0.5,0.5
+random_unordered,10,4.940000000000001,6.375923462526817,0.6,0.48989794855663565
+baseline,1,0.0,N/A,0.0,N/A

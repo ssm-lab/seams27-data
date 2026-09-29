@@ -1,0 +1,21 @@
+{
+  "rl": {
+    "algorithm": "Q-learning",
+    "learning_rate": 0.1,
+    "discount_factor": 0.99,
+    "epsilon_start": 1.0,
+    "epsilon_decay": 0.995,
+    "epsilon_min": 0.05
+  },
+  "curriculum": {
+    "size": 6,
+    "steps_per_environment": 50000,
+    "checkpoint_frequency": 1000,
+    "seed": 42
+  },
+  "evaluation": {
+    "evaluate_baseline": true,
+    "eval_episodes": 100,
+    "eval_seed": 123
+  }
+}
