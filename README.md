@@ -14,18 +14,16 @@ Curriculum learning can improve reinforcement learning (RL) by exposing an agent
 
 ## Setup
 
-Requires Python 3.10+.
+Requires Python 3.10+. Download and extract the data package, then run from its root directory:
 
 ```bash
-git clone https://github.com/ssm-lab/seams27-data.git
-cd seams27-data
 python3 -m venv .venv
 .venv/bin/python -m pip install -r 03-scripts/requirements.txt
 cd 03-scripts
 ```
 
-Run the commands below from `seams27-data/03-scripts`.
-Only adaptive training requires the [MDE4Adaptive-CL setup guide](https://github.com/ssm-lab/mde4adaptive-cl#setup-guide), including cloning MDE4Adaptive-CL and GA4CL and setting up the Eclipse plugins.
+Run the commands below from `03-scripts/`.
+Only adaptive training requires the companion adaptation-engine implementation and its Eclipse dependencies; follow its setup guide before starting the server.
 
 ## 1. Configurations
 
