@@ -4,7 +4,11 @@
 ---
 ## About
 
-Curriculum learning can improve reinforcement learning (RL) by exposing an agent to progressively challenging training environments. However, existing approaches often rely on predefined curricula or technique-specific adaptation mechanisms. We propose a model-driven approach that treats adaptive RL training as a self-adaptive system. Curricula and training environments are represented as runtime models and evolved through a MAPE-K loop that interprets learning observations, selects adaptation strategies, and realizes them through extensible model transformations while preserving constraints. We evaluate the approach on a wildfire-mitigation RL scenario in terms of sample efficiency and target-task performance.
+Curriculum learning (CL) can improve reinforcement learning (RL) by exposing an agent to progressively challenging training environments. However, existing approaches often rely on predefined curricula or technique-specific adaptation mechanisms.
+We propose a model-driven approach for self-adaptive CL.
+Curricula and training environments are represented in a runtime model and evolved through model transformations in a MAPE-K loop.
+Analysis is achieved through semantically lifted, highly contextual learning conditions, captured in model queries.
+Our evaluation shows that the approach acquires target-task competence substantially faster than random and genetic-algorithm-based curriculum baselines, while matching or exceeding their final performance.
 
 ## Content description
 - `01-configurations` - Contains the configurations for experiments.
