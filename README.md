@@ -21,6 +21,7 @@ Our evaluation shows that the approach acquires target-task competence substanti
 Requires Python 3.10+. Download and extract the data package, then run from its root directory:
 
 ```bash
+cd seams27-data
 python3 -m venv .venv
 .venv/bin/python -m pip install -r 03-scripts/requirements.txt
 cd 03-scripts
