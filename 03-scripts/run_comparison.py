@@ -263,10 +263,15 @@ def make_adaptation_plot(output_dir, total_steps):
     with events_path.open(newline="") as stream:
         events = list(csv.DictReader(stream))
 
+    # patterns = [
+    #     ("Mastery", "Mastery\n→ Advance", "tab:blue"),
+    #     ("ExcessiveChallenge", "Excessive challenge\n→ Simplify", "tab:orange"),
+    #     ("StagnationNonFinal", "Stagnation\n→ Diversify", "teal"),
+    # ]
     patterns = [
-        ("Mastery", "Mastery\n→ Advance", "tab:blue"),
-        ("ExcessiveChallenge", "Excessive challenge\n→ Simplify", "tab:orange"),
-        ("StagnationNonFinal", "Stagnation\n→ Diversify", "teal"),
+        ("Mastery", "Advance", "tab:blue"),
+        ("ExcessiveChallenge", "Simplify", "tab:orange"),
+        ("StagnationNonFinal", "Diversify", "teal"),
     ]
     runs = sorted({event["run"] for event in events})
     events = [event for event in events if event["outcome"] == "successful"]
