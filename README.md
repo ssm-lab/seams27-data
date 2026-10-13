@@ -58,8 +58,9 @@ Runs 10 GA, 10 random, 10 ordered random baselines, and one target-only (hardest
 
 ## 2.2. Training (adaptive curricula)
 For each run:
-1. Stop the previous EMF server and launch `AdaptationServer.launch` from the bridge plugin in Eclipse. Wait for `Adaptation server listening on tcp://127.0.0.1:5558`.
-2. In the terminal, replace `N` with each run number from 1 through 10:
+1. Stop the previous EMF server. In Eclipse, open **Run Configurations → AdaptationServer → Common → Output File** and select `<repo>/04-results/comparison/adaptive/run_N/adaptive-run.log`, using a zero-padded folder number (`run_01` through `run_10`). Create the folder if needed, leave **Append** unchecked, and click **Apply**.
+2. Launch `AdaptationServer.launch` from the bridge plugin. Wait for `Bind successfully. Waiting for request...`.
+3. In the terminal, replace `N` with each run number from 1 through 10:
 ```bash
 ../.venv/bin/python run_comparison.py train-adaptive --run N
 ```
@@ -67,6 +68,7 @@ For each run:
 ## 3. Evaluation & Plotting
 ```bash
 ../.venv/bin/python run_comparison.py evaluate
+../.venv/bin/python analyze_adaptation_logs.py
 ../.venv/bin/python run_comparison.py plot
 ```
 
