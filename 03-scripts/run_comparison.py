@@ -275,12 +275,12 @@ def make_adaptation_plot(output_dir, total_steps):
         steps = [int(e["global_step"]) for e in events if e["condition"] == condition]
         axis.scatter(steps, [lane] * len(steps), s=22,
                      color=color, alpha=.8, zorder=3)
-    axis.set_yticks(range(len(patterns)), [p[1] for p in patterns], fontsize=10)
+    axis.set_yticks(range(len(patterns)), [p[1] for p in patterns], fontsize=15)
     axis.set_ylim(len(patterns) - .5, -.5)
     axis.set_xlim(0, total_steps)
     ticks = np.linspace(0, total_steps, 7)
-    axis.set_xticks(ticks, [f"{int(t / 1000)}k" if t else "0" for t in ticks])
-    axis.set_xlabel("Timestep")
+    axis.set_xticks(ticks, [f"{int(t / 1000)}k" if t else "0" for t in ticks], fontsize=15)
+    axis.set_xlabel("Timestep", fontsize=15)
     axis.set_axisbelow(True)
     axis.grid(True, alpha=.25)
     fig.tight_layout()
