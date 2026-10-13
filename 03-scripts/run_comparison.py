@@ -254,6 +254,67 @@ def make_summary_plot(train_dir, output_dir, total_steps):
     save_comparison_figure(fig, ax, output_dir, "summary_cumulative_reward")
 
 
+def make_adaptation_plot(output_dir, total_steps):
+    """Plot successful actions on combined and per-run condition/action timelines."""
+    events_path = Path(output_dir) / "adaptation_events.csv"
+    if not events_path.exists():
+        print("Run analyze_adaptation_logs.py to generate the adaptation timeline data.")
+        return
+    with events_path.open(newline="") as stream:
+        events = list(csv.DictReader(stream))
+
+    patterns = [
+        ("Mastery", "Mastery\n→ Advance", "tab:blue"),
+        ("ExcessiveChallenge", "Excessive challenge\n→ Simplify", "tab:orange"),
+        ("StagnationNonFinal", "Stagnation\n→ Diversify", "teal"),
+    ]
+    runs = sorted({event["run"] for event in events})
+    events = [event for event in events if event["outcome"] == "successful"]
+    fig, axis = plt.subplots(figsize=(11, 2.4))
+    for lane, (condition, label, color) in enumerate(patterns):
+        steps = [int(e["global_step"]) for e in events if e["condition"] == condition]
+        axis.scatter(steps, [lane] * len(steps), s=22,
+                     color=color, alpha=.8, zorder=3)
+    axis.set_yticks(range(len(patterns)), [p[1] for p in patterns], fontsize=10)
+    axis.set_ylim(len(patterns) - .5, -.5)
+    axis.set_xlim(0, total_steps)
+    ticks = np.linspace(0, total_steps, 7)
+    axis.set_xticks(ticks, [f"{int(t / 1000)}k" if t else "0" for t in ticks])
+    axis.set_xlabel("Timestep")
+    axis.set_axisbelow(True)
+    axis.grid(True, alpha=.25)
+    fig.tight_layout()
+    for extension in ("png", "pdf"):
+        fig.savefig(Path(output_dir) / f"adaptation_timeline.{extension}",
+                    dpi=300, bbox_inches="tight")
+    plt.close(fig)
+
+    nrows = (len(runs) + 1) // 2
+    fig, axes = plt.subplots(nrows, 2, figsize=(14, 1.5 * nrows + .6),
+                             sharex=True, sharey=True, squeeze=False)
+    for axis, run in zip(axes.flat, runs):
+        for lane, (condition, label, color) in enumerate(patterns):
+            steps = [int(e["global_step"]) for e in events
+                     if e["run"] == run and e["condition"] == condition]
+            axis.scatter(steps, [lane] * len(steps), s=24, color=color, zorder=3)
+        axis.set_title(run.replace("run_", "Run "), loc="left", fontsize=11)
+        axis.set_yticks(range(len(patterns)), [p[1] for p in patterns], fontsize=9)
+        axis.set_ylim(len(patterns) - .5, -.5)
+        axis.set_xlim(0, total_steps)
+        axis.set_xticks(ticks, [f"{int(t / 1000)}k" if t else "0" for t in ticks])
+        axis.tick_params(axis="x", labelbottom=True, labelsize=9)
+        axis.set_axisbelow(True)
+        axis.grid(True, alpha=.25)
+    for axis in list(axes.flat)[len(runs):]:
+        axis.set_visible(False)
+    fig.supxlabel("Timesteps", y=.015)
+    fig.tight_layout(rect=(0, .045, 1, 1), h_pad=.8, w_pad=2)
+    for extension in ("png", "pdf"):
+        fig.savefig(Path(output_dir) / f"adaptation_timeline_per_run.{extension}",
+                    dpi=300, bbox_inches="tight")
+    plt.close(fig)
+
+
 def save_eval_csvs(train_dir, output_dir):
     rows = []
     for condition, directories in evaluation_run_directories(train_dir).items():
@@ -325,6 +386,7 @@ def main():
         make_summary_plot(args.output, args.results, total_steps)
         make_target_evaluation_plot(args.output, args.results, total_steps)
         save_eval_csvs(args.output, args.results)
+        make_adaptation_plot(args.results, total_steps)
 
 
 if __name__ == "__main__":
