@@ -182,7 +182,8 @@ def evaluation_run_directories(output_dir):
     grouped = {}
     for condition in LABELS:
         directories = [str(p) for p in sorted((Path(output_dir) / condition).glob("run_*"))
-                       if training_done(p)]
+                       if all((p / name).is_file() for name in
+                              ("final.npy", "training_curve.npz", "evaluation_curve.npz"))]
         if directories:
             grouped[condition] = directories
     return grouped
@@ -249,6 +250,7 @@ def make_summary_plot(train_dir, output_dir, total_steps):
             run_fig.savefig(result_dir / "cumulative_reward.png")
             plt.close(run_fig)
     ax.set(xlabel="Timesteps", ylabel="Cumulative training reward")
+    ax.grid(True, alpha=.3)
     save_comparison_figure(fig, ax, output_dir, "summary_cumulative_reward")
 
 
