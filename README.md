@@ -68,6 +68,7 @@ For each run:
 ## 3. Evaluation & Plotting
 ```bash
 ../.venv/bin/python run_comparison.py evaluate
+../.venv/bin/python analyze_success_rate.py
 ../.venv/bin/python analyze_adaptation_logs.py
 ../.venv/bin/python run_comparison.py plot
 ```
