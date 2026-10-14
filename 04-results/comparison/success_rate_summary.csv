@@ -1,0 +1,6 @@
+condition,n_runs,success_threshold,runs_with_success,runs_reaching_threshold,final_success_rate_mean,final_success_rate_population_sd,first_success_steps_mean,first_success_steps_population_sd,threshold_steps_mean,threshold_steps_population_sd
+baseline,1,0.8,0,0,0.0,,,,,
+random_ordered,10,0.8,5,5,0.5,0.5,262600.0,7337.574531137657,262600.0,7337.574531137657
+random_unordered,10,0.8,6,6,0.6,0.48989794855663565,258666.66666666666,22551.176367443793,258666.66666666666,22551.176367443793
+curriculum,10,0.8,9,9,0.9,0.30000000000000004,271777.77777777775,13214.283330949782,271777.77777777775,13214.283330949782
+adaptive,10,0.8,10,10,1.0,0.0,89500.0,18380.69639594757,89500.0,18380.69639594757
